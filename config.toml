@@ -1,5 +1,5 @@
 # The URL the site will be built for
-base_url = "https://blog-vert-two-30.vercel.app/"
+base_url = "https://eswdblog.netlify.app/"
 
 title = "eswd blog"
 description = ""
