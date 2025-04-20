@@ -85,15 +85,35 @@
 
 {% macro page_header(title) %}
     <div class="page-header">
-        {{ title }}<span class="primary-color" style="font-size: 1.6em">.</span>
+        {{ title }}
+        <!-- <span class="primary-color" style="font-size: 1.6em">.</span> -->
     </div>
 {% endmacro content %}
 
 {% macro home_page(section) %}
     <main>
-        <article>
-            <section class="body">
+        <article id="fullpage">
+            <section class="body section">
                 {{ post_macros::page_header(title=section.title) }}
+                <div class="page-subheader">
+                    <p>Subheader</p>
+                </div> 
+                {{ section.content | safe }}
+            </section>
+
+            <section class="body section">
+                {{ post_macros::page_header(title=section.title) }}
+                <div class="page-subheader">
+                    <p>Subheader</p>
+                </div> 
+                {{ section.content | safe }}
+            </section>
+
+            <section class="body section">
+                {{ post_macros::page_header(title=section.title) }}
+                <div class="page-subheader">
+                    <p>Subheader</p>
+                </div> 
                 {{ section.content | safe }}
             </section>
         </article>

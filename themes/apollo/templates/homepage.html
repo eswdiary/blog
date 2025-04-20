@@ -2,4 +2,11 @@
 
 {% block main_content %}
     {{ post_macros::home_page(section=section) }}
+    <script>
+        new fullpage('#fullpage', {
+            licenseKey: '',
+            navigation: true,
+            verticalCentered: true
+        })
+    </script>
 {% endblock main_content %}
