@@ -13,11 +13,23 @@
   --bg-1: #212121;
   --bg-2: #282828;
 
-  --border-color: #ddc7a1;
-  --border-color-rgb: 221, 199, 161;
+  --fg-0: #d4be98;
+  --fg-1: #ddc7a1;
 
-  --primary-color: #e78a4e;
-  --hover-color: white;
+  --border-color: #2e3b3b;
+  --border-color-rgb: 46, 59, 59;
+
+  --primary-color: #ddc7a1;
+  --primary-color-rgb: 221, 199, 161;
+  --hover-color: #32302f;
+  
+  --red-color: #ea6962;
+  --yellow-color: #d8a657;
+  --green-color: #a9b665;
+  --aqua-color: #89b482;
+  --blue-color: #7daea3;
+  --purple-color: #d3869b;
+  --grey-color: #a89984;
 }
 
 /* Layout */
@@ -29,7 +41,7 @@
 }
 
 hr {
-  border-top: 2px solid rgba(var(--border-color-rgb), .6);
+  border-top: 1px solid rgba(var(--border-color-rgb), .6);
   margin: 1.75em 0;
 }
 
@@ -37,24 +49,86 @@ header {
   font-family: var(--header-font);
 }
 
-/* Nav */
-/* ------------------------------------------------------------ */
-nav a {
-    margin: 0 10px;
+/* a {
+  border-bottom: 2px solid var(--primary-color);
+  color: var(--hover-color);
+  transition: background-color 0.3s ease;
+} */
+
+iframe {
+  display: block;
+  margin: 0 auto;
 }
 
-/* Home icon */
+pre {
+  max-width: 100%;
+  box-shadow: inset 5px 0 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+/* Code block overflow */
+pre::-webkit-scrollbar {
+    height: 8px;
+}
+
+pre::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.clipboard-button svg {
+  fill: var(--primary-color);
+}
+
+/* Nav */
 /* ------------------------------------------------------------ */
 :root.dark .home img {
   filter: invert();
 }
 
-header .home img {
-  border: unset;
-  width: 16px;
-  height: 16px;
+header {
+  align-items: center;
 }
 
+nav a {
+    margin: 0 10px;
+    border-bottom: none;
+    font-size: 1.25rem;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+  background-color: rgba(var(--primary-color-rgb), .8);
+  color: var(--hover-color);
+}
+
+header a {
+  border-bottom: none;
+}
+
+header .main {
+  align-items: baseline;
+}
+
+.house-icon, .search-icon {
+  border: unset;
+  width: 32px;
+  height: 32px;
+}
+
+#sun-icon, #moon-icon {
+  border: unset;
+  width: 20px;
+  height: 20px;
+}
+
+.home a .house-icon {
+  fill: var(--text-0);
+  transition: fill 0.3s ease;
+}
+
+.home a:hover .house-icon {
+  fill: var(--primary-color);
+}
 
 /* Homepage */
 /* ------------------------------------------------------------ */
@@ -82,4 +156,51 @@ header .home img {
 
 #post .page-header, #post .meta{
   text-align: center;
+}
+
+/* 文章不寫 H1 */
+#post .body h1 {
+  font-size: 2rem;
+}
+
+#post .body h2 {
+  font-size: 1.75rem;
+}
+
+#post .body h3 {
+  font-size: 1.5rem;
+}
+
+#post .body h4 {
+  font-size: 1.25rem;
+}
+
+#post .body h5 {
+  font-size: 1rem;
+}
+
+/* 標題標記 */
+h1::before {
+  color: var(--red-color);
+  content: "# ";
+}
+
+h2::before {
+  color: var(--yellow-color);
+  content: "## ";
+}
+
+h3::before {
+  color: var(--aqua-color);
+  content: "### ";
+}
+
+h4::before {
+  color: var(--blue-color);
+  content: "#### ";
+}
+
+h5::before {
+  color: var(--purple-color);
+  content: "##### ";
 }

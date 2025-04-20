@@ -53,10 +53,11 @@ a.zola-anchor {
   border-bottom: none;
 }
 
-a:hover {
-  background-color: var(--primary-color);
-  color: var(--hover-color);
-}
+// 先不要設定全局套用
+// a:hover {
+//   background-color: var(--primary-color);
+//   color: var(--hover-color);
+// }
 
 time {
   color: grey;
