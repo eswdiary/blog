@@ -1,5 +1,10 @@
 /* Dark theme needs a bigger contrast compared to the white theme. */
 
+:root {
+  --text-font: "Cantarell", "GenYoGothic2 TW";
+  --header-font: "JetBrains Mono", "GenYoGothic2 TW";
+}
+
 :root.dark {
   --text-0: #ccc;
   --text-1: #d4be98;
@@ -9,27 +14,61 @@
   --bg-2: #282828;
 
   --border-color: #ddc7a1;
+  --border-color-rgb: 221, 199, 161;
 
   --primary-color: #e78a4e;
   --hover-color: white;
 }
 
+/* Layout */
 /* ----------------------------------------------------------- */
 
+/* 整個頁面的最大寬度 */
 .content {
   max-width: 1100px;
 }
 
-.body .page-header {
+hr {
+  border-top: 2px solid rgba(var(--border-color-rgb), .6);
+  margin: 1.75em 0;
+}
+
+header {
+  font-family: var(--header-font);
+}
+
+/* Nav */
+/* ------------------------------------------------------------ */
+nav a {
+    margin: 0 10px;
+}
+
+/* Home icon */
+/* ------------------------------------------------------------ */
+:root.dark .home img {
+  filter: invert();
+}
+
+header .home img {
+  border: unset;
+  width: 16px;
+  height: 16px;
+}
+
+
+/* Homepage */
+/* ------------------------------------------------------------ */
+/* 新增 #homepage */
+#homepage .body .page-header {
   color: var(--text-1);
   text-align: center;
 }
 
-.page-subheader {
+#homepage .page-subheader {
   text-align: center;
 }
 
-.body {
+#homepage .body {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -37,6 +76,10 @@
   height: 70vh;
 }
 
-nav a {
-    margin: 0 10px;
+/* Post */
+/* ------------------------------------------------------------ */
+/* 新增 #post */
+
+#post .page-header, #post .meta{
+  text-align: center;
 }

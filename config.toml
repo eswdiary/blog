@@ -34,8 +34,8 @@ menu = [
 ]
 
 socials = [
-  { name = "twitter", url = "https://twitter.com/not_matthias", icon = "twitter" },
-  { name = "github", url = "https://github.com/not-matthias/", icon = "github" },
+  { name = "x-twitter", url = "https://x.com/eswdiary", icon = "x-twitter" },
+  { name = "github", url = "https://github.com/eswdiary/", icon = "github" },
 ]
 
 toc = true

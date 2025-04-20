@@ -92,7 +92,7 @@
 
 {% macro home_page(section) %}
     <main>
-        <article id="fullpage">
+        <article id="homepage">
             <section class="body section">
                 {{ post_macros::page_header(title=section.title) }}
                 <div class="page-subheader">
@@ -122,7 +122,7 @@
 
 {% macro content(page) %}
     <main>
-        <article>
+        <article id="post">
             <div class="title">
                 {#<h1 class="title">{{ page.title }}</h1>#}
                 {{ post_macros::page_header(title=page.title) }}
@@ -133,16 +133,16 @@
                     {% endif %}
 
                     {% if page.updated %}
-                        :: Updated on <time>{{ page.updated | date(format="%Y-%m-%d") }}</time>
+                        > Updated on <time>{{ page.updated | date(format="%Y-%m-%d") }}</time>
                     {% endif %}
 
-                    {% if page.extra.read_time %}:: <time>{{ page.reading_time }}</time> Min Read{% endif %}
+                    {% if page.extra.read_time %}> <time>{{ page.reading_time }}</time> Min Read{% endif %}
 
-                    {% if page.word_count %}:: {{ page.word_count }} Words{% endif %}
+                    {% if page.word_count %}> {{ page.word_count }} Words{% endif %}
 
                     {# Inline display of tags directly after the date #}
                     {% if page.taxonomies and page.taxonomies.tags %}
-                        <span class="tags-label">:: Tags:</span>
+                        <span class="tags-label">> Tags:</span>
                         <span class="tags">
                             {%- for tag in page.taxonomies.tags %}
                                 <a href="{{ get_taxonomy_url(kind='tags', name=tag, lang=page.lang) }}"
@@ -215,6 +215,8 @@
                     </div>
                 {% endif %}
             {% endif %}
+
+            <hr>
 
             <section class="body">
                 {{ page.content | safe }}

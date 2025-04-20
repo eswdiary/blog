@@ -5,7 +5,12 @@
                 <img alt="{{ config.title }}" src="{{ get_url(path=config.extra.logo) }}">
             </a>
         {% else %}
-            <a href={{ config.base_url }}>{{ config.title }}</a>
+        <div class="home">
+            <a href={{ config.base_url }}>
+                <img src="{{ get_url(path="icons/house.svg")}}" alt="house">
+            </a>
+        </div>
+            <!-- <a href={{ config.base_url }}>{{ config.title }}</a> -->
         {% endif %}
 
 

@@ -14,18 +14,51 @@
   font-display: swap;
 }
 
+// @font-face {
+//   font-family: "Space Grotesk";
+//   font-style: normal;
+//   font-weight: 400;
+//   src: url("fonts/SpaceGrotesk/SpaceGrotesk-Regular.ttf"), local("ttf");
+//   font-display: swap;
+// }
+
+// @font-face {
+//   font-family: "Space Grotesk";
+//   font-style: normal;
+//   font-weight: 700;
+//   src: url("fonts/SpaceGrotesk/SpaceGrotesk-Bold.ttf"), local("ttf");
+//   font-display: swap;
+// }
+
+
 @font-face {
-  font-family: "Space Grotesk";
+  font-family: "GenYoGothic2 TW";
   font-style: normal;
   font-weight: 400;
-  src: url("fonts/SpaceGrotesk/SpaceGrotesk-Regular.ttf"), local("ttf");
+  src: url("fonts/GneYo/GenYoGothic2TW-R.otf"), local("ttf");
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Space Grotesk";
+  font-family: "GenYoGothic2 TW";
   font-style: normal;
   font-weight: 700;
-  src: url("fonts/SpaceGrotesk/SpaceGrotesk-Bold.ttf"), local("ttf");
+  src: url("fonts/GneYo/GenYoGothic2TW-B.otf"), local("ttf");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Cantarell";
+  font-style: normal;
+  font-weight: 400;
+  src: url("fonts/Cantarell/Cantarell-Regular.ttf"), local("ttf");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Cantarell";
+  font-style: normal;
+  font-weight: 700;
+  src: url("fonts/Cantarell/Cantarell-Bold.ttf"), local("ttf");
   font-display: swap;
 }
