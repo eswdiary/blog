@@ -59,6 +59,8 @@ date = "2025-01-17"
 - [【演算法】入門介紹－什麼是演算法 What's Algorithm - Jason Chen's Blog](https://jason-chen-1992.weebly.com/home/-whats-algorithm)
 - [John Cage  Aaron Dilloway  Rozart Mix (Hanson) – Igloo Magazine](https://igloomag.com/features/john-cage-aaron-dilloway-rozart-mix-hanson)
 
+<hr>
+
 [^1]: [What exactly is an algorithm Algorithms explained  BBC Ideas - YouTube](https://www.youtube.com/watch?v=ZnBF2GeAKbo)
 [^2]: [關於算法作曲 (Algorithmic Composition) 〖上〗  融聲創意 Zone Sound Creative](https://zonesoundcreative.com/algorithmic-composition-1/)
 [^3]: [Mozart Dice Game Online](https://www.playonlinedicegames.com/mozart)
