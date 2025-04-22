@@ -320,3 +320,36 @@ pre {
 	margin: 20px 0 0 0;
 	line-height: 1.5;
 }
+
+.clipboard-button {
+	position: absolute;
+	bottom: 5px;
+	right: 5px;
+	display: flex;
+	align-items: center;
+	justify-items: center;
+	color: var(--fg-0);
+	background-color: var(--bg-2);
+	border: 1px solid;
+	border-radius: 5px;
+	margin: .6rem;
+	padding: .6rem;
+	transition: all .2s;
+	opacity: 0;
+}
+
+.clipboard-button svg {
+	fill: var(--fg-0);
+	stroke: var(--fg-0);
+	stroke-width: 1.125;
+	border: none;
+}
+
+.clipboard-button:hover {
+	border-color: var(--orange-color);
+}
+
+pre:hover .clipboard-button {
+	opacity: 1;
+	transition: all .2s;
+}

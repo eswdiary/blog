@@ -145,11 +145,12 @@ $language-colors: (
   @include base-label-style(#333); // Default background color
 }
 
-@each $lang, $color-info in $language-colors {
-  .label-#{$lang} {
-    @include base-label-style(nth($color-info, 1));
-  }
-}
+// 語言標籤上色
+// @each $lang, $color-info in $language-colors {
+//   .label-#{$lang} {
+//     @include base-label-style(nth($color-info, 1));
+//   }
+// }
 
 code {
   background-color: var(--bg-primary);
@@ -224,14 +225,14 @@ pre {
 .clipboard-button svg {
   all: unset;
   cursor: pointer;
-  position: absolute;
-  bottom: 5px;
+  // position: absolute;
+  // bottom: 5px;
   /* 5px from the bottom */
-  right: 5px;
+  // right: 5px;
   /* 5px from the right */
   z-index: 10;
   background-color: transparent;
   border: none;
-  fill: #ef5350;
+  // fill: #ef5350;
   /* Sets the color of the SVG, assuming it's an SVG icon */
 }
