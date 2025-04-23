@@ -1,5 +1,5 @@
 +++
-title = "Apollo"
+title = "Proj 1"
 description = "Modern and minimalistic blog theme."
 weight = 1
 

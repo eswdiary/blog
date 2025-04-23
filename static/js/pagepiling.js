@@ -9,3 +9,11 @@ $(document).ready(function() {
 		navigation: false,
 	});
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    // 假設非 pagepiling 頁面有特定標記
+    if (!document.querySelector('#pagepiling')) {
+        document.documentElement.style.overflow = 'auto';
+        document.body.style.overflow = 'auto';
+    }
+});

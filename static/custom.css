@@ -210,12 +210,21 @@ header .main {
 	z-index: 10;
 }
 
+.s3 {
+	padding-bottom: 15%;
+	opacity: 0;
+	transition: opacity 0.5s ease-out;
+	z-index: 10;
+}
+
+
+
 .tag-cloud .page-header {
 	margin: 0;
 }
 
 /* Transition animation */
-.pp-section.active .s1, .pp-section.active .s2 {
+.pp-section.active .s1, .pp-section.active .s2, .pp-section.active .s3 {
 	opacity: 1;
 	transition: opacity 0.8s ease-in;
 }
@@ -283,6 +292,7 @@ header .main {
 	border-bottom: none;
 } */
 
+
 /* #pp-nav li {
     margin: 16px 16px;
 } */
@@ -297,6 +307,45 @@ header .main {
 	height: 16px;
 } */
 
+/* .s3 的作品集 */
+.portfolio {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 欄，等寬 */
+    gap: 30px;
+    padding: 20px;
+}
+
+.portfolio-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: none;
+    border-radius: 10px; /* 圓角 */
+    overflow: hidden
+}
+
+.portfolio-item:hover {
+    transform: scale(1.05); /* 滑鼠懸停時略放大 */
+}
+
+.portfolio-item a {
+	display: block;
+	border-bottom: none;
+	width: 100%;
+}
+
+.portfolio-item a:hover .card-image {
+    opacity: 1; /* 滑鼠懸停時降低透明度 */
+}
+
+.card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; 
+	opacity: 0.6;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+}
 
 /* Post */
 /* ------------------------------------------------------------ */
@@ -445,4 +494,25 @@ pre {
 pre:hover .clipboard-button {
 	opacity: 1;
 	transition: all .2s;
+}
+
+/* Projects */
+/* ------------------------------------------------------------ */
+.card {
+	border: 1px solid var(--border-color);
+	box-shadow: 5px 0 20px 5px #0003
+}
+
+/* RWD */
+/* ------------------------------------------------------------ */
+@media (max-width: 768px) {
+    .portfolio {
+        grid-template-columns: repeat(2, 1fr); /* 小螢幕顯示 2 欄 */
+    }
+}
+
+@media (max-width: 480px) {
+    .portfolio {
+        grid-template-columns: 1fr; /* 手機顯示 1 欄 */
+    }
 }

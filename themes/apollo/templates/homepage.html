@@ -3,7 +3,10 @@
 {% block main_content %}
     {# 獲取 tags 分類法的 terms #}
     {% set tags = get_taxonomy(kind="tags") %}
+    
+    {# 獲取 projet 文章 #}
+    {% set projects_section = get_section(path="projects/_index.md") %}
 
-    {# 加入 tags 的 arg #}
-    {{ post_macros::home_page(section=section, terms=tags.items) }}
+{# 加入 tags 的 arg #}
+{{ post_macros::home_page(section=section, terms=tags.items, projects=projects_section) }}
 {% endblock main_content %}
