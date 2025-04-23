@@ -1,5 +1,3 @@
-/* Dark theme needs a bigger contrast compared to the white theme. */
-
 :root {
 	--text-font: "Cantarell", "GenYoGothic2 TW";
 	--header-font: "JetBrains Mono", "GenYoGothic2 TW";
@@ -11,7 +9,6 @@
 
 	--bg-0: #282828;
 	--bg-1: #212121;
-	--bg-2: #282828;
 
 	--fg-0: #d4be98;
 	--fg-1: #ddc7a1;
@@ -56,12 +53,18 @@
 }
 
 hr {
-	border-top: 1px solid rgba(var(--border-color-rgb), 0.6);
+	border-top: 1px solid rgba(var(--primary-color-rgb), 0.6);
 	margin: 1.75em 0;
 }
 
+/* 高於 pagepiling  */
 header {
 	font-family: var(--header-font);
+	z-index: 1000;
+}
+
+nav, .main {
+	z-index: 1001;
 }
 
 /* a {
@@ -106,6 +109,7 @@ ul li {
 
 header {
 	align-items: center;
+	background-color: var(--bg-0);
 }
 
 nav a {
@@ -187,23 +191,112 @@ header .main {
 
 /* Homepage */
 /* ------------------------------------------------------------ */
-/* 新增 #homepage */
-#homepage .body .page-header {
+
+/* section 1 / 2 / 3 */
+.s1 {
+	padding-bottom: 25%;
+	opacity: 0;
+	transition: opacity 0.5s ease-out;
+	z-index: 10;
+}
+
+.s2 {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding-bottom: 2%;
+	opacity: 0;
+	transition: opacity 0.5s ease-out;
+	z-index: 10;
+}
+
+.tag-cloud .page-header {
+	margin: 0;
+}
+
+/* Transition animation */
+.pp-section.active .s1, .pp-section.active .s2 {
+	opacity: 1;
+	transition: opacity 0.8s ease-in;
+}
+
+.tags {
+	display: flex;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+}
+
+.tags li {
+	padding-right: 20px;
+}
+
+#homepage .page-header {
 	color: var(--text-1);
 	text-align: center;
+	padding-bottom: 1.25rem;
 }
 
 #homepage .page-subheader {
 	text-align: center;
 }
 
-#homepage .body {
+#pagepiling {
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Pagepiling */
+/* 限制每個區塊的寬度 */
+.pp-section {
+    max-width: 1100px !important;
+    width: 100% !important;
+    margin: 0 auto;
+    box-sizing: border-box;
+	height: 100vh;
+	/* text-align: center; */
+}
+
+/* 可選：確保內容置中 */
+.pp-section > * {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/* 調整導覽圓點樣式 */
+/* 目前停用 */
+/* 
+#pp-nav {
 	display: flex;
-	justify-content: center;
 	flex-direction: column;
 	align-items: center;
-	height: 70vh;
+	justify-content: center;
+    transform: translateY(-50%);
+    width: auto;
+	z-index: 1;
+	max-width: 1100px;
+	margin-left: 20%;
 }
+*/
+
+/* #pp-nav a {
+	border-bottom: none;
+} */
+
+/* #pp-nav li {
+    margin: 16px 16px;
+} */
+
+/* #pp-nav li .active span {
+    background: var(--orange-color);
+} */
+
+/* #pp-nav li span {
+    background: var(--fg-1);
+	width: 16px;
+	height: 16px;
+} */
+
 
 /* Post */
 /* ------------------------------------------------------------ */

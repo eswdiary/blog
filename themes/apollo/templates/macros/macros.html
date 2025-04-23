@@ -20,7 +20,11 @@
             <li class="list-item">
                 <section>
                     <div class="post-header">
-                        <time>{{ page.date | date(format="%Y-%m-%d") }}</time>
+                        {% if page.date %}
+                            <time>{{ page.date | date(format="%Y-%m-%d") }}</time>
+                        {% else %}
+                            <time>N/A</time>
+                        {% endif %}
 
                         <div>
                             <h1 class="title">
@@ -90,41 +94,68 @@
     </div>
 {% endmacro content %}
 
-{% macro home_page(section) %}
+{# ------------------------------------------------------------------ #}
+{% macro home_page(section, terms) %}
     <main>
         <article id="homepage">
-            <section class="body section">
-                {{ post_macros::page_header(title=section.title) }}
-                <div class="page-subheader">
-                    <p>Subheader</p>
-                </div> 
-                {{ section.content | safe }}
-            </section>
+            <div id="pagepiling">
+                <section class="section">
+                {# .s1 #}
+                    <div class="s1">
+                        {{ post_macros::page_header(title=section.title) }}
+                        <div class="page-subheader">
+                            <p>Subheader</p>
+                        </div>
+                    </div>
+                    {{ section.content | safe }}
+                </section>
 
-            <section class="body section">
-                {{ post_macros::page_header(title=section.title) }}
-                <div class="page-subheader">
-                    <p>Subheader</p>
-                </div> 
-                {{ section.content | safe }}
-            </section>
+                {# ----- Tag list ----- #}
+                <section class="section">
+                    {# .s2 #}
+                    <div class="s2">
+                        <div class="tag-cloud">
+                            {{ post_macros::page_header(title="Tags") }}
+                            <ul class="tags">
+                                {% for term in terms %}
+                                    <li>
+                                        <a href="{{ term.permalink | safe }}">
+                                            {{ term.name }} ({{ term.pages | length }} post{{ term.pages | length | pluralize }})
+                                        </a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <hr>
+                    {# ----- Post list ----- #}
+                        <div class="post-cloud">
+                            {{ post_macros::page_header(title="Recently") }}
 
-            <section class="body section">
-                {{ post_macros::page_header(title=section.title) }}
-                <div class="page-subheader">
-                    <p>Subheader</p>
-                </div> 
-                {{ section.content | safe }}
-            </section>
+                            {# 模仿 section.html 的邏輯 #}
+                            {% set posts_section = get_section(path="posts/_index.md") %}
+
+                            {%- set show_pages = posts_section.pages | slice(end=5) -%}
+
+                            {{ post_macros::list_posts(pages=show_pages) }}
+
+                        </div>
+                    </div>
+                </section>
+
+                {# s3 #}
+                <section class="section">
+                </section>
+            </div>
         </article>
     </main>
 {% endmacro home_page %}
+{# ------------------------------------------------------------------ #}
 
 {% macro content(page) %}
     <main>
         <article id="post">
             <div class="title">
-                {#<h1 class="title">{{ page.title }}</h1>#}
+                {# <h1 class="title">{{ page.title }}</h1> #}
                 {{ post_macros::page_header(title=page.title) }}
 
                 <div class="meta">

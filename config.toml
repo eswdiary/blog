@@ -47,6 +47,8 @@ stylesheets = [
   "custom.css",           # static/custom.css
 ]
 
+use_cdn = true
+
 [search]
 include_title = true
 include_description = true
