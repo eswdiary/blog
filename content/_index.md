@@ -1,4 +1,4 @@
 +++
-title= "ewds' Blog"
+title= "$ hello@eswd"
 template = "homepage.html"
 +++

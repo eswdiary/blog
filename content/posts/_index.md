@@ -1,6 +1,5 @@
 +++
-# posts/ 讀取
-paginate_by = 7
+paginate_by = 10
 title = "Posts"
 sort_by = "date"
 

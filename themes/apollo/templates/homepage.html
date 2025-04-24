@@ -1,12 +1,18 @@
 {% extends "base.html" %}
 
 {% block main_content %}
-    {# 獲取 tags 分類法的 terms #}
+    {# p5.js #}
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.5/lib/p5.min.js"></script>
+    <script src={{ get_url(path="js/p5.js") }}></script>
+
+    {# typed.js #}
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>    {# 獲取 tags 分類法的 terms #}
+
     {% set tags = get_taxonomy(kind="tags") %}
     
     {# 獲取 projet 文章 #}
     {% set projects_section = get_section(path="projects/_index.md") %}
 
-{# 加入 tags 的 arg #}
-{{ post_macros::home_page(section=section, terms=tags.items, projects=projects_section) }}
+    {# 加入 tags 的 arg #}
+    {{ post_macros::home_page(section=section, terms=tags.items, projects=projects_section) }}
 {% endblock main_content %}

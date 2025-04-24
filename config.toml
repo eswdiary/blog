@@ -1,7 +1,7 @@
 # The URL the site will be built for
 base_url = "https://eswdblog.netlify.app/"
 
-title = "eswd blog"
+title = "$ hello@eswd"
 description = ""
 
 theme = "apollo"
@@ -25,7 +25,7 @@ render_emoji = true
 
 [extra]
 
-theme = "toggle"
+theme = "dark"
 
 # Nav
 menu = [
@@ -38,6 +38,9 @@ menu = [
 socials = [
   { name = "x-twitter", url = "https://x.com/eswdiary", icon = "x-twitter" },
   { name = "github", url = "https://github.com/eswdiary/", icon = "github" },
+  { name = "instagram", url = "#", icon = "instagram" },
+  { name = "rss", url = "#", icon = "rss" },
+  { name = "youtube", url = "#", icon = "youtube" },
 ]
 
 toc = true

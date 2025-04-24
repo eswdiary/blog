@@ -101,6 +101,10 @@ ul li {
 	margin: 10px 0;
 }
 
+code {
+	border: none;
+}
+
 /* Nav */
 /* ------------------------------------------------------------ */
 :root.dark .home img {
@@ -119,9 +123,9 @@ nav a {
 	transition: background-color 0.3s ease;
 }
 
-header a {
+/* header a {
 	border-bottom: none;
-}
+} */
 
 header .main {
 	align-items: baseline;
@@ -132,6 +136,12 @@ header .main {
 	border: unset;
 	width: 32px;
 	height: 32px;
+	transition: transfomr 0.3s ease;
+}
+
+.house-icon:hover,
+.search-icon:hover {
+	transform: scale(1.05);
 }
 
 #sun-icon,
@@ -160,23 +170,14 @@ header .main {
 	stroke: var(--primary-color);
 }
 
-.navposts:hover {
-	background-color: rgba(var(--red-color-rgb), 0.8);
-	color: var(--hover-color);
-}
-
-.navprojs:hover {
-	background-color: rgba(var(--orange-color-rgb), 0.8);
-	color: var(--hover-color);
-}
-
+.navposts:hover,
+.navprojs:hover,
+.navtags:hover,
 .navabout:hover {
-	background-color: rgba(var(--yellow-color-rgb), 0.8);
-	color: var(--hover-color);
-}
+	/* border-bottom: 2px solid var(--yellow-color); */
 
-.navtags:hover {
-	background-color: rgba(var(--green-color-rgb), 0.8);
+	/* 兩種選擇 */
+	background-color: rgba(var(--yellow-color-rgb), 0.8);
 	color: var(--hover-color);
 }
 
@@ -217,11 +218,15 @@ header .main {
 	z-index: 10;
 }
 
-
-
 .tag-cloud .page-header {
 	margin: 0;
 }
+
+.post-cloud a:hover,
+.list a:hover {
+	border-bottom: 2px solid var(--fg-0);
+}
+
 
 /* Transition animation */
 .pp-section.active .s1, .pp-section.active .s2, .pp-section.active .s3 {
@@ -253,6 +258,8 @@ header .main {
     max-width: 1100px;
     margin: 0 auto;
     width: 100%;
+    z-index: 0;
+	background: transparent;
 }
 
 /* Pagepiling */
@@ -263,7 +270,6 @@ header .main {
     margin: 0 auto;
     box-sizing: border-box;
 	height: 100vh;
-	/* text-align: center; */
 }
 
 /* 可選：確保內容置中 */
@@ -271,41 +277,6 @@ header .main {
     max-width: 100%;
     margin: 0 auto;
 }
-
-/* 調整導覽圓點樣式 */
-/* 目前停用 */
-/* 
-#pp-nav {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-    transform: translateY(-50%);
-    width: auto;
-	z-index: 1;
-	max-width: 1100px;
-	margin-left: 20%;
-}
-*/
-
-/* #pp-nav a {
-	border-bottom: none;
-} */
-
-
-/* #pp-nav li {
-    margin: 16px 16px;
-} */
-
-/* #pp-nav li .active span {
-    background: var(--orange-color);
-} */
-
-/* #pp-nav li span {
-    background: var(--fg-1);
-	width: 16px;
-	height: 16px;
-} */
 
 /* .s3 的作品集 */
 .portfolio {
@@ -321,7 +292,8 @@ header .main {
     align-items: center;
     background: none;
     border-radius: 10px; /* 圓角 */
-    overflow: hidden
+    overflow: hidden;
+	transition: transform 0.3s ease-in;
 }
 
 .portfolio-item:hover {
@@ -345,6 +317,12 @@ header .main {
 	opacity: 0.6;
     transition: opacity 0.3s ease;
     cursor: pointer;
+}
+
+#defaultCanvas0 {
+	position: absolute;
+	inset: 0;
+	opacity: 0.3;
 }
 
 /* Post */
@@ -496,11 +474,84 @@ pre:hover .clipboard-button {
 	transition: all .2s;
 }
 
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1000;
+	opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+#back-to-top:hover {
+    background-color: #555;
+}
+
+#back-to-top.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
 /* Projects */
 /* ------------------------------------------------------------ */
 .card {
 	border: 1px solid var(--border-color);
 	box-shadow: 5px 0 20px 5px #0003
+}
+
+/* About */
+/* ------------------------------------------------------------ */
+
+#about {
+	padding-top: 10%;
+}
+
+#about .page-header {
+	color: var(--text-0);
+	text-align: center;
+	padding-bottom: 1.25rem;
+	margin: 30px auto;
+}
+
+#about .body {
+	text-align: center;
+}
+
+.avatar-container {
+	text-align: center;
+}
+
+.avatar {
+    width: 128px;
+    height: 128px;
+    border-radius: 50%;
+    object-fit: cover;
+	border: none;
+	box-shadow: 2px 2px 5px 2px #0003;
+    opacity: 0.8;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.avatar:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.socials {
+	justify-content: center;
+	align-items: baseline;
+}
+
+.socials a {
+	margin: 10px 3px;
 }
 
 /* RWD */
