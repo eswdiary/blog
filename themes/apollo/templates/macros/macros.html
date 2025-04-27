@@ -203,7 +203,7 @@
 
                 <div class="meta">
                     {% if page.date %}
-                        Posted on <time>{{ page.date | date(format="%Y-%m-%d") }}</time>
+                        <time>{{ page.date | date(format="%Y-%m-%d") }}</time>
                     {% endif %}
 
                     {% if page.updated %}
@@ -212,11 +212,12 @@
 
                     {% if page.extra.read_time %}> <time>{{ page.reading_time }}</time> Min Read{% endif %}
 
-                    {% if page.word_count %}> {{ page.word_count }} Words{% endif %}
+                    {% if page.word_count %} > {{ page.word_count }} Words{% endif %}
 
+                    <br>
                     {# Inline display of tags directly after the date #}
                     {% if page.taxonomies and page.taxonomies.tags %}
-                        <span class="tags-label">> Tags:</span>
+                        <!-- <span class="tags-label"> Tags:</span> -->
                         <span class="tags">
                             {%- for tag in page.taxonomies.tags %}
                                 <a href="{{ get_taxonomy_url(kind='tags', name=tag, lang=page.lang) }}"

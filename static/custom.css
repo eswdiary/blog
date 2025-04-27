@@ -329,6 +329,11 @@ header .main {
 /* ------------------------------------------------------------ */
 /* 新增 #post */
 
+.tags {
+	margin-top: 10px;
+	justify-content: center;
+}
+
 #post .page-header,
 #post .meta {
 	text-align: center;

@@ -52,6 +52,9 @@ stylesheets = [
 
 use_cdn = true
 
+mathjax = true
+mathjax_dollar_inline_enable = true
+
 [search]
 include_title = true
 include_description = true
