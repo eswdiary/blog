@@ -1,6 +1,8 @@
 +++
 title = "Saturation 的觀念與進階用法筆記"
 date = "2025-04-11"
+[taxonomies]
+tags=["Sound Design（聲音設計）"]
 +++
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/qQPYMfcPzY0?si=OTE9KJMemy2v1hN4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
